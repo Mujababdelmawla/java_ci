@@ -19,4 +19,4 @@ jobs:
                 distribution: 'temurin'
 
             - name: run the test
-              run: mvn test
+              run: npm test
