@@ -1,0 +1,22 @@
+name: java ci 
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: setup java 
+              uses: actions/setup-java@v4
+              with:
+                java-version: '17'
+                distribution: 'temurin'
+
+            - name: run the test
+              run: mvn test
